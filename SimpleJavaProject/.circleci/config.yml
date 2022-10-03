@@ -1,0 +1,17 @@
+version: 2.1 # Use version 2.1 config to get access to orbs, pipelines
+
+orbs:
+    azure-acr: circleci/azure-acr@0.2.1 # Use the Azure ACR orb in your config
+
+workflows:
+    build-deploy:
+    jobs:
+        - azure/build-and-push-image:
+            dockerfile: dockerfile # defaults to `Dockerfile`
+            path: . # Defaults to working directory
+            login-server-name: docker3.azurecr.io # e.g. {yourregistryname}.azure.io
+            registry-name: docker3
+            repo: MYIMG
+            filters:
+            branches:
+                only: main # Only deploys when the commit is on the Main branch
