@@ -11,7 +11,7 @@ workflows:
             path: . # Defaults to working directory
             login-server-name: docker3.azurecr.io # e.g. {yourregistryname}.azure.io
             registry-name: docker3
-            repo: MYIMG
+            repo: docker
             filters:
             branches:
                 only: main # Only deploys when the commit is on the Main branch
