@@ -14,4 +14,4 @@ workflows:
             repo: MYIMG
             filters:
             branches:
-                only: main # Only deploys when the commit is on the Main branch
+                only: master # Only deploys when the commit is on the Main branch
